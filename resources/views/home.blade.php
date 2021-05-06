@@ -113,14 +113,8 @@
             console.log(numItem);            
             console.log(coupon_id);
             //var checkedValue = null; 
-            var checkedValue = document.getElementById("cart").value;
-            document.getElementById('cart').onclick = function() {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-            for (var checkbox of checkboxes) {
-                document.body.append(checkbox.value + ' ');
-            }
-        }
-            console.log(checkedValue);
+            
+           // console.log(checkedValue);
                       
             if(coupon_id == 'FIXED10' &&  numItem >= 1){ //
                  
