@@ -109,6 +109,7 @@
           $(document).on('change','#coupon',function(){
             var coupon_id=$(this).val();
             var numItem = $('input[type="checkbox"]:checked'). length; 
+            var totalPrice =  document.getElementById("prices").value;
             document.getElementById("numItem").innerHTML = 'Cart '+numItem;
             console.log(numItem);            
             console.log(coupon_id);
@@ -116,7 +117,7 @@
             
            // console.log(checkedValue);
                       
-            if(coupon_id == 'FIXED10' &&  numItem >= 1){ //
+            if(coupon_id == 'FIXED10' &&  numItem >= 1 && totalPrice > 50){ //
                  
               //$('#atcstatus').show(400);
              // $('#atcstatus1').hide(400);
@@ -127,21 +128,21 @@
              //$('#dprice').hide(400);          
             console.log(DiscountedPrice);
               }
-              if(coupon_id == 'PERCENT10'  &&  numItem >= 2){ //               
+              if(coupon_id == 'PERCENT10'  &&  numItem >= 2 && totalPrice > 100){ //               
             var totalPrice =  document.getElementById("prices").value;
             var DiscountedPrice =  totalPrice - (0.1 * totalPrice);
             document.getElementById("dprice").innerHTML = DiscountedPrice; 
             $('#dprice').show(400);
             console.log(DiscountedPrice);
               }
-              if(coupon_id == 'MIXED10' &&  numItem >= 3 ){ //               
+              if(coupon_id == 'MIXED10' &&  numItem >= 3  && totalPrice > 200){ //               
             var totalPrice =  document.getElementById("prices").value;
             var DiscountedPrice =  totalPrice - (0.1 * totalPrice);
             document.getElementById("dprice").innerHTML = DiscountedPrice; 
             $('#dprice').show(400);
             console.log(DiscountedPrice);
               } 
-              if(coupon_id == 'REJECTED10' ){ //               
+              if(coupon_id == 'REJECTED10' && totalPrice > 1000){ //               
             var totalPrice =  document.getElementById("prices").value;
             var DiscountedPrice =  totalPrice - (0.1 * totalPrice);
             document.getElementById("dprice").innerHTML = DiscountedPrice; 
